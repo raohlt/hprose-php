@@ -40,7 +40,7 @@ class ClassManager {
         if (isset(self::$classCache1[$alias])) {
             return self::$classCache1[$alias];
         }
-        if (!class_exists($alias)) {
+        if (!class_exists($alias, false)) {
             $class = str_replace('_', '\\', $alias);
             if (class_exists($class)) {
                 self::register($class, $alias);
