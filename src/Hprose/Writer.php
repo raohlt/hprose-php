@@ -46,7 +46,7 @@ class Writer {
     private static function ustrlen($s) {
         return strlen(iconv('UTF-8', 'UTF-16LE', $s)) >> 1;
     }
-    private static function isList(array $a) {
+    private static function isList($a) {
         $count = count($a);
         return ($count === 0) ||
                ((isset($a[0]) || array_key_exists(0, $a)) && (($count === 1) ||
