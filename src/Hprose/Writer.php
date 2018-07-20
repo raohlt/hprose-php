@@ -227,7 +227,7 @@ class Writer {
         }
         $this->stream->write(Tags::TagClosebrace);
     }
-    public function writeAssocArray(array $map) {
+    public function writeAssocArray($map) {
         $this->refer->set($map);
         $count = count($map);
         $this->stream->write(Tags::TagMap);
