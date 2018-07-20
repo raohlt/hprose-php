@@ -256,7 +256,13 @@ class Writer {
     }
     public function writeListWithRef(Traversable $list) {
         if (!$this->refer->write($this->stream, $list)) {
-            $this->writeList($list);
+            // list or map
+            if (self::isList($list)) {
+                $this->writeList($list);
+            }
+            else {
+                $this->writeAssocArray($list);
+            }
         }
     }
     public function writeMap(SplObjectStorage $map) {
