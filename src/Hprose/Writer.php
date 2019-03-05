@@ -345,7 +345,8 @@ class Writer {
             $name = $prop->getName();
             $fl = ord($name[0]);
             if ($fl >= ord('A') && $fl <= ord('Z')) {
-                $name = strtolower($name[0]) . substr($name, 1);
+                // keep raw
+//                 $name = strtolower($name[0]) . substr($name, 1);
             }
             $this->writeString($name);
         }
